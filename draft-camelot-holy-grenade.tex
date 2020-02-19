@@ -1,5 +1,16 @@
 \documentclass{metanorma}
 
+%% Temporary fixes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{aside}{}{}
+\newenvironment{comment}{}{}
+\let\cmt\relax% [comment]#...#
+\let\bcp\relax% [bcp14]#...#
+\usepackage{verbatim}
+\newenvironment{sourcecode}{\verbatim}{\endverbatim}
+\usepackage{longtable}
+\usepackage{multirow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \title{The Holy Hand Grenade of Antioch}
 
 \set{author}{Arthur son of Uther Pendragon}
@@ -55,7 +66,7 @@ as well as "Spamalot", the musical inspired by the movie.
 
 % [NOTE,remove-in-rfc=false]
 \begin{note}
-  \caption{Spamalot}
+  % TODO: \caption{Spamalot}
   The relevance of the musical "Spamalot" to Internet lore should be
   obvious to the reader; but in case of doubt, see also
   Section 1 ("\textbf{What is Spam?}") of RFC2635.
@@ -165,7 +176,7 @@ communication, to wit the exchange between the
 and the taunting French soldiers serving under 
 \textbf{Guy de Lombard} are,
 properly speaking, outside the scope of this `menagerie`, being more
-or less human. Notwithstanding, several^ish^ beasts both animate~d~
+% TODO: or less human. Notwithstanding, several^ish^ beasts both animate~d~
 and wooden played a significant part in this encounter; most
 notably:
 
@@ -304,7 +315,7 @@ long-running fruitful relationship between the British and the
 French peoples,
 \begin{comment}TODO: Will need to verify that claim.\end{comment} which
 arguably predates the traditional English enmity with the
-French. [comment]#Strictly speaking, the Knights are Welsh.#
+French. \cmt{Strictly speaking, the Knights are Welsh.}
 
 \begin{comment}
 This document, as it turns out, has a profusion of XML comments.
@@ -607,7 +618,7 @@ Sovereign's Orb of the United Kingdom::
 % //tag::bcp14[]
 
 The instructions in the \textit{Book of Armaments} on the proper deployment
-of the Holy Hand Grenade of Antioch [bcp14]#may# be summarized as
+of the Holy Hand Grenade of Antioch \bcp{may} be summarized as
 follows, although this summary \textbf{SHALL NOT} be used as a substitute
 for a reading from the Book of Armaments:
 
@@ -646,7 +657,7 @@ for a reading from the Book of Armaments:
   \end{enumerate}
 
   \item Lob the Holy Hand Grenade of Antioch towards the Foe
-  \item The Foe, being naughty in the \textbf{LORD's} sight, [bcp14]#shall# snuff it
+  \item The Foe, being naughty in the \textbf{LORD's} sight, \bcp{shall} snuff it
 
 \end{enumerate}
 
@@ -691,7 +702,8 @@ Round Table:
 % //tag::table[]
 
 
-\begin{longtabu} to \linewidth {|l|l|}
+% \begin{longtabu} to \linewidth {|l|l|}
+\begin{longtable}{|l|l|}
 
 French Castle & Cave of Caerbannog \\
 \endhead
@@ -718,7 +730,8 @@ Other French Guards & Brother Maynard \\
 \multicolumn{1}{r}{Sir Gawain} \\
 \multicolumn{1}{r}{Sir Ector} \\
 
-\end{longtabu}
+\end{longtable}
+% \end{longtabu}
 
 % //end::table[]
 % [.comment]
@@ -738,12 +751,12 @@ acceptable substitute:
 % //tag::hebrew[]
 
 \begin{quote}
-&#x2e;כאן אולי ימצאו המילים האחרונות של יוסף מארמתיה
-&#x2e;מי אשר יהיה אמיץ ובעל נפש טהורה יוכל למצוא את הגביע הקדוש בטירת אאאאאאאה
+.כאן אולי ימצאו המילים האחרונות של יוסף מארמתיה
+.מי אשר יהיה אמיץ ובעל נפש טהורה יוכל למצוא את הגביע הקדוש בטירת אאאאאאאה
 
-"Here may be found the last words of Joseph&nbsp;of Arimathea.
+"Here may be found the last words of Joseph~of Arimathea.
 He who is valiant and pure of spirit may find the Holy Grail
-in the castle of &mdash; Aaaargh."
+in the castle of --- Aaaargh."
 \end{quote}
 
 % //end::hebrew[]
@@ -768,14 +781,14 @@ I repeat. Do not let the Killer Rabbit (\mncite{killer-bunny}) out.
 % tag::bibliography1[]
 % //tag::bibliography[]
 
-\begin{thebibliography}{1}
 \subsection{Normative References}
+\begin{thebibliography}{1}
   \bibitem{RFC2119} 
 \end{thebibliography}
 
 
-\begin{thebibliography}{1}
 \subsection{Informative References}
+\begin{thebibliography}{1}
 
 \begin{verbatim}
 <reference anchor="grail_film">
