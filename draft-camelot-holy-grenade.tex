@@ -1,12 +1,11 @@
 \documentclass{metanorma}
 
 %% Temporary fixes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{aside}{}{}
-\newenvironment{comment}{}{}
-\let\cmt\relax% [comment]#...#
 \let\bcp\relax% [bcp14]#...#
+
 \usepackage{verbatim}
 \newenvironment{sourcecode}{\verbatim}{\endverbatim}
+
 \usepackage{longtable}
 \usepackage{multirow}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -272,8 +271,7 @@ ROOTS_CLAY_SKELETON_MORESOIL_CLAY_CLAY_CLAY_CLAY_<MUSHROOMS>
 % tag::aside1[]
 % //tag::aside[]
 
-% TODO PB: aside environment
-\begin{aside}
+\begin{reviewernote}
   While the exchange at the French-occupied castle is one of
   the more memorable scenes of 
   \textbf{Monty Python and the Holy Grail},
@@ -286,7 +284,7 @@ ROOTS_CLAY_SKELETON_MORESOIL_CLAY_CLAY_CLAY_CLAY_<MUSHROOMS>
     \item The Trojan Rabbit as projectile has already been anticipated
     by the Cow as projectile.
   \end{itemize}
-\end{aside}
+\end{reviewernote}
 
 % //end::aside[]
 
@@ -319,17 +317,14 @@ French peoples, which
 arguably predates the traditional English enmity with the
 French.
 
-% TODO: is this a comment?
-\begin{comment}
+\begin{reviewernote}
   TODO: Will need to verify that claim.
-\end{comment}
+\end{reviewernote}
 
-% TODO: is this a comment?
-\begin{comment}
+\begin{reviewernote}
   Strictly speaking, the Knights are Welsh.
-\end{comment}
+\end{reviewernote}
 
-% TODO: this is a comment, but how should it be formatted?
 \begin{comment}
 This document, as it turns out, has a profusion of XML comments.
 
