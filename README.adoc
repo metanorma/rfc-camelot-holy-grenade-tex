@@ -1,6 +1,12 @@
+:workflows-url: https://github.com/metanorma/rfc-camelot-holy-grenade-tex/workflows
+:actions-url: https://github.com/metanorma/rfc-camelot-holy-grenade-tex/actions
+:badges-branch: development
+
 = The Holy Hand Grenade of Antioch (in LaTeXRFC / Metanorma-IETF)
 
-//image:https://travis-ci.org/metanorma/rfc-camelot-holy-grenade-tex.svg?branch=master["Build Status", link="https://travis-ci.org/metanorma/rfc-camelot-holy-grenade-tex"]
+image:{workflows-url}/ubuntu/badge.svg?branch={badges-branch}["Ubuntu build status", link="{actions-url}?query=workflow%3Aubuntu+branch%3A{badges-branch}"]
+image:{workflows-url}/macos/badge.svg?branch={badges-branch}["MacOS build status", link="{actions-url}?query=workflow%3Amacos+branch%3A{badges-branch}"]
+image:{workflows-url}/windows/badge.svg?branch={badges-branch}["Windows build status", link="{actions-url}?query=workflow%3Awindows+branch%3A{badges-branch}"]
 
 This document is available in its rendered forms here:
 
