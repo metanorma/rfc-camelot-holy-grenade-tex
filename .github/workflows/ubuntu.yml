@@ -52,8 +52,15 @@ jobs:
         run: |
           latexmlpost draft-camelot-holy-grenade.xml --destination=draft-camelot-holy-grenade.adoc --stylesheet=tex2mn/Metanorma.xsl --nocrossref --nodefaultresources
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v1
+      - name: Setup Metanorma
+        run: |
+          brew tap metanorma/metanorma
+          brew install metanorma
+
+      - name: "Run metanorma: adoc => xml (RFC V3) "
+        run: |
+          metanorma compile --type=ietf --extensions=rfc draft-camelot-holy-grenade.adoc
+
 
       # - name: Setup Ruby ${{ matrix.ruby }}
       #   uses: actions/setup-ruby@v1
