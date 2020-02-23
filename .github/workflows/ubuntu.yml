@@ -31,13 +31,13 @@ jobs:
 
       - name: Dump cpanm cacheable folder
         run: |
-        echo $PERL_MM_OPT
-        echo $PERL_MB_OPT
-        perl -V
-        cpanm --no-interactive --notest Module::Build
-        echo $PERL_MM_OPT
-        echo $PERL_MB_OPT
-        perl -V
+          echo $PERL_MM_OPT
+          echo $PERL_MB_OPT
+          perl -V
+          cpanm --no-interactive --notest Module::Build
+          echo $PERL_MM_OPT
+          echo $PERL_MB_OPT
+          perl -V
 
       # LaTeXML dependencies: see https://dlmf.nist.gov/LaTeXML/get.html#prerequisites
       #   LaTeXML (cpan) -> XML::LibXML (cpan) -> DB_File (cpan) -> libdb-dev (apt)
