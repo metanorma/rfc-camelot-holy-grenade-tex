@@ -29,6 +29,18 @@ jobs:
         with:
           perl-version: ${{ matrix.perl }}
 
+      - name: Dump cpanm cacheable folder
+        run: |
+          echo $PERL_MM_OPT
+          echo $PERL_MB_OPT
+          perl -V
+          cpanm --no-interactive --notest Module::Build
+          echo $PERL_MM_OPT
+          echo $PERL_MB_OPT
+          perl -V
+  
+
+
       - name: Symlink libxml to libxml2
         run: |
           ln -s "$(xcrun --show-sdk-path)/usr/include/libxml2/libxml/" "$(xcrun --show-sdk-path)/usr/include/libxml"

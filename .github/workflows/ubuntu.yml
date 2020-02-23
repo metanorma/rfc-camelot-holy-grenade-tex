@@ -29,6 +29,16 @@ jobs:
         with:
           perl-version: ${{ matrix.perl }}
 
+      - name: Dump cpanm cacheable folder
+        run: |
+        echo $PERL_MM_OPT
+        echo $PERL_MB_OPT
+        perl -V
+        cpanm --no-interactive --notest Module::Build
+        echo $PERL_MM_OPT
+        echo $PERL_MB_OPT
+        perl -V
+
       # LaTeXML dependencies: see https://dlmf.nist.gov/LaTeXML/get.html#prerequisites
       #   LaTeXML (cpan) -> XML::LibXML (cpan) -> DB_File (cpan) -> libdb-dev (apt)
       #   LaTeXML (cpan) -> XML::LibXSLT (cpan) -> libxml2-dev libxslt1-dev (apt)
@@ -43,15 +53,6 @@ jobs:
       # but that's planned for release on 0.85 (early 2020).
       - name: Install LaTeXML
         run: cpanm --verbose --no-interactive --notest git://github.com/brucemiller/LaTeXML.git@9a0e7dc5
-
-      - name: "Run latexml: tex => xml"
-        run: |
-          latexml draft-camelot-holy-grenade.tex --output=draft-camelot-holy-grenade.xml --preload=tex2mn/Metanorma.cls --preload=tex2mn/Metanorma.cls.ltxml --nocomments
-
-      - name: "Run latexmlpost: xml => adoc"
-        run: |
-          latexmlpost draft-camelot-holy-grenade.xml --destination=draft-camelot-holy-grenade.adoc --stylesheet=tex2mn/Metanorma.xsl --nocrossref --nodefaultresources
-
 
       # - name: Setup Ruby ${{ matrix.ruby }}
       #   uses: actions/setup-ruby@v1
