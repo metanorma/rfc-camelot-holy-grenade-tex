@@ -1,5 +1,9 @@
 \documentclass{metanorma}
 
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+
 %% Temporary fixes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
 \newenvironment{sourcecode}{\verbatim}{\endverbatim}
@@ -295,9 +299,7 @@ ROOTS_CLAY_SKELETON_MORESOIL_CLAY_CLAY_CLAY_CLAY_<MUSHROOMS>
 
 \begin{note}
   \mn{display=true,source=Author}
-  Image courtesy of
-  % TODO \href apparently not working
-  {https://camelot.gov.example/creatures-in-ascii/}
+  Image courtesy of \url{https://camelot.gov.example/creatures-in-ascii/}
 \end{note}
 
 % //end::note[]
@@ -563,10 +565,9 @@ the following personnel engaged with it in combat:
 
 
 \begin{figure}[h]\centering
-  \mn{foo}
+  \mn{link=https://upload.wikimedia.org/wikipedia/commons/b/bf/Coa_Illustration_Elements_Globus_cruciger.svg,align=right}
   \label{sovereign-orb}
   \caption{The Sovereign's Orb made invisible}
-  % TODO: \mn{link=https://upload.wikimedia.org/wikipedia/commons/b/bf/Coa_Illustration_Elements_Globus_cruciger.svg,align=right}
   % TODO: image::https://camelot.gov.example/sovereigns_orb.jpg[Orb,124,135]
   %       \includegraphics[width=135,height=124]{https://camelot.gov.example/sovereigns_orb.jpg}
   \includegraphics[width=\textwidth]{example-image-a}
@@ -576,7 +577,7 @@ the following personnel engaged with it in combat:
 % tag::index1[]
 % //tag::index[]
 
-% TODO: what are (((...))) ?
+% TODO: implement indexing, i.e. (((...)))
 The solution to the impasse at the ((Cave of Caerbannog)) was
 provided by the successful deployment of the
 \textbf{Holy Hand Grenade of Antioch} (see \mncite{hand-grenade-figure})
