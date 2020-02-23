@@ -13,6 +13,15 @@ jobs:
         perl: ['5.30']
     steps:
 
+
+      - name: Cache gems
+        id: cache-gems
+        uses: actions/cache@v1
+        with:
+          path: ${{ runner.tool_cache }}/perl/5.30.1/x64/lib/site_perl/5.30.1/x86_64-linux
+          key: ${{ runner.os }}-site_perl
+
+
       - name: Checkout repo
         uses: actions/checkout@master
       - name: Checkout submodules
@@ -28,6 +37,7 @@ jobs:
         uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: ${{ matrix.perl }}
+
 
       - name: Dump cpanm cacheable folder
         run: |
