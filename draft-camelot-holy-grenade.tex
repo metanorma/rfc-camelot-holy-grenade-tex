@@ -6,6 +6,7 @@
 
 %% Temporary fixes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
+% TODO: properly handle sourcecode (right now it's just verbatim)
 \newenvironment{sourcecode}{\verbatim}{\endverbatim}
 
 \usepackage{longtable}
@@ -400,7 +401,6 @@ Killer Rabbit:
   \caption{A Photo Of The Killer Rabbit of Caerbannog Taken In Secret}
   \alt{The Killer Bunny, in ASCII}
   \begin{verbatim}
-....
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\
@@ -437,11 +437,10 @@ MW   \\/\||v v||  -\\-------___     .   .,         \     |
 
 \end{figure}
 
-% TODO: is this figure environment avoidable?
 \begin{figure}[h]\centering
 \label{killer-source}
 \caption{C Code To Lure Killer Rabbit Back To Cave}
-% TODO: \mn{source,c,markers=true}
+\mn{source,c,markers=true}
 \begin{sourcecode}
 /* Locate the Killer Rabbit */
 int type;
@@ -524,11 +523,10 @@ the following personnel engaged with it in combat:
 
 % //tag::figure2a[]
 
-% TODO: wrapping figure should not be rendered to ADOC for verbatim
 \begin{figure}[h]\centering
 \label{hand-grenade-figure}
 \caption{The Holy Hand Grenade of Antioch (don't pull the pin)}
-% [alt=Holy Hand Grenade of Antioch, in ASCII]
+\mn{alt=Holy Hand Grenade of Antioch, in ASCII}
 \begin{verbatim}
                         ______
                        \\/  \/
@@ -750,12 +748,13 @@ acceptable substitute:
 
 \begin{quote}
   \mn{Joseph of Arimathea, https://context.reverso.net}
-% .כאן אולי ימצאו המילים האחרונות של יוסף מארמתיה
-% .מי אשר יהיה אמיץ ובעל נפש טהורה יוכל למצוא את הגביע הקדוש בטירת אאאאאאאה
+  % TODO: properly handle unicode in latex compilation
+  .כאן אולי ימצאו המילים האחרונות של יוסף מארמתיה
+  .מי אשר יהיה אמיץ ובעל נפש טהורה יוכל למצוא את הגביע הקדוש בטירת אאאאאאאה
 
-``Here may be found the last words of Joseph~of Arimathea.
-He who is valiant and pure of spirit may find the Holy Grail
-in the castle of --- Aaaargh.''
+  ``Here may be found the last words of Joseph~of Arimathea.
+  He who is valiant and pure of spirit may find the Holy Grail
+  in the castle of --- Aaaargh.''
 \end{quote}
 
 % //end::hebrew[]
