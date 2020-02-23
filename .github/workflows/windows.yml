@@ -51,26 +51,3 @@ jobs:
       - name: "Run latexmlpost: xml => adoc"
         run: |
           latexmlpost draft-camelot-holy-grenade.xml --destination=draft-camelot-holy-grenade.adoc --stylesheet=tex2mn/Metanorma.xsl --nocrossref --nodefaultresources
-
-      # - name: Setup Ruby ${{ matrix.ruby }}
-      #   uses: actions/setup-ruby@v1
-      #   with:
-      #     ruby-version: ${{ matrix.ruby }}
-      #     architecture: 'x64'
-
-      # - name: Cache gems
-      #   id: cache-gems
-      #   uses: actions/cache@v1
-      #   with:
-      #     path: ${{ runner.tool_cache }}/Ruby/2.5.7/x64/lib/ruby/gems
-      #     key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
-
-      # - name: Update gems
-      #   run: |
-      #     gem install bundler -v "~> 2"
-      #     bundle update --bundler
-      #     bundle install --jobs 4 --retry 3
-
-      # - name: Run specs
-      #   run: |
-      #     bundle exec rake test

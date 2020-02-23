@@ -29,18 +29,6 @@ jobs:
         with:
           perl-version: ${{ matrix.perl }}
 
-      - name: Dump cpanm cacheable folder
-        run: |
-          echo $PERL_MM_OPT
-          echo $PERL_MB_OPT
-          perl -V
-          cpanm --no-interactive --notest Module::Build
-          echo $PERL_MM_OPT
-          echo $PERL_MB_OPT
-          perl -V
-  
-
-
       - name: Symlink libxml to libxml2
         run: |
           ln -s "$(xcrun --show-sdk-path)/usr/include/libxml2/libxml/" "$(xcrun --show-sdk-path)/usr/include/libxml"
@@ -59,35 +47,3 @@ jobs:
       - name: "Run latexmlpost: xml => adoc"
         run: |
           latexmlpost draft-camelot-holy-grenade.xml --destination=draft-camelot-holy-grenade.adoc --stylesheet=tex2mn/Metanorma.xsl --nocrossref --nodefaultresources
-
-      - name: Setup Metanorma
-        run: |
-          brew tap metanorma/metanorma
-          brew install metanorma
-
-      - name: "Run metanorma: adoc => xml (RFC V3) "
-        run: |
-          metanorma compile --type=ietf --extensions=rfc draft-camelot-holy-grenade.adoc
-
-      # - name: Setup Ruby ${{ matrix.ruby }}
-      #   uses: actions/setup-ruby@v1
-      #   with:
-      #     ruby-version: ${{ matrix.ruby }}
-      #     architecture: 'x64'
-
-      # - name: Cache gems
-      #   id: cache-gems
-      #   uses: actions/cache@v1
-      #   with:
-      #     path: ${{ runner.tool_cache }}/Ruby/2.5.7/x64/lib/ruby/gems
-      #     key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
-
-      # - name: Update gems
-      #   run: |
-      #     gem install bundler -v "~> 2"
-      #     bundle update --bundler
-      #     bundle install --jobs 4 --retry 3
-
-      # - name: Run specs
-      #   run: |
-      #     bundle exec rake test
